@@ -1,0 +1,1 @@
+& pod trunk push ./client/CloudmersiveValidateApiClient.podspec --allow-warnings
