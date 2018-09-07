@@ -41,8 +41,12 @@ Import the following:
 #import <CloudmersiveOCRApiClient/CMApiClient.h>
 #import <CloudmersiveOCRApiClient/CMDefaultConfiguration.h>
 // load models
+#import <CloudmersiveOCRApiClient/CMImageToLinesWithLocationResult.h>
 #import <CloudmersiveOCRApiClient/CMImageToTextResponse.h>
+#import <CloudmersiveOCRApiClient/CMImageToWordsWithLocationResult.h>
+#import <CloudmersiveOCRApiClient/CMOcrLineElement.h>
 #import <CloudmersiveOCRApiClient/CMOcrPageResult.h>
+#import <CloudmersiveOCRApiClient/CMOcrWordElement.h>
 #import <CloudmersiveOCRApiClient/CMPdfToTextResponse.h>
 // load API classes for accessing endpoints
 #import <CloudmersiveOCRApiClient/CMImageOcrApi.h>
@@ -74,10 +78,10 @@ NSString* *language = @"language_example"; // Optional, language of the input do
 
 CMImageOcrApi *apiInstance = [[CMImageOcrApi alloc] init];
 
-// Convert a photo of a document into text
-[apiInstance imageOcrPhotoToTextWithImageFile:imageFile
+// Convert a scanned image into words with location
+[apiInstance imageOcrImageLinesWithLocationWithImageFile:imageFile
     language:language
-              completionHandler: ^(CMImageToTextResponse* output, NSError* error) {
+              completionHandler: ^(CMImageToLinesWithLocationResult* output, NSError* error) {
                             if (output) {
                                 NSLog(@"%@", output);
                             }
@@ -94,6 +98,8 @@ All URIs are relative to *https://api.cloudmersive.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*CMImageOcrApi* | [**imageOcrImageLinesWithLocation**](docs/CMImageOcrApi.md#imageocrimagelineswithlocation) | **POST** /ocr/image/to/lines-with-location | Convert a scanned image into words with location
+*CMImageOcrApi* | [**imageOcrImageWordsWithLocation**](docs/CMImageOcrApi.md#imageocrimagewordswithlocation) | **POST** /ocr/image/to/words-with-location | Convert a scanned image into words with location
 *CMImageOcrApi* | [**imageOcrPhotoToText**](docs/CMImageOcrApi.md#imageocrphotototext) | **POST** /ocr/photo/toText | Convert a photo of a document into text
 *CMImageOcrApi* | [**imageOcrPost**](docs/CMImageOcrApi.md#imageocrpost) | **POST** /ocr/image/toText | Convert a scanned image into text
 *CMPdfOcrApi* | [**pdfOcrPost**](docs/CMPdfOcrApi.md#pdfocrpost) | **POST** /ocr/pdf/toText | Converts an uploaded image in common formats such as JPEG, PNG into text via Optical Character Recognition.
@@ -103,8 +109,12 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [CMImageToLinesWithLocationResult](docs/CMImageToLinesWithLocationResult.md)
  - [CMImageToTextResponse](docs/CMImageToTextResponse.md)
+ - [CMImageToWordsWithLocationResult](docs/CMImageToWordsWithLocationResult.md)
+ - [CMOcrLineElement](docs/CMOcrLineElement.md)
  - [CMOcrPageResult](docs/CMOcrPageResult.md)
+ - [CMOcrWordElement](docs/CMOcrWordElement.md)
  - [CMPdfToTextResponse](docs/CMPdfToTextResponse.md)
 
 
