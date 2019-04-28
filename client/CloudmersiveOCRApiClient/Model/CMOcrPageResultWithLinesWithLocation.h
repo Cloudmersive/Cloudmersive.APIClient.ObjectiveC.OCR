@@ -14,21 +14,24 @@
 */
 
 
-#import "CMOcrWordElement.h"
-@protocol CMOcrWordElement;
-@class CMOcrWordElement;
+#import "CMOcrLineElement.h"
+@protocol CMOcrLineElement;
+@class CMOcrLineElement;
 
 
 
-@protocol CMImageToWordsWithLocationResult
+@protocol CMOcrPageResultWithLinesWithLocation
 @end
 
-@interface CMImageToWordsWithLocationResult : CMObject
+@interface CMOcrPageResultWithLinesWithLocation : CMObject
 
 
 @property(nonatomic) NSNumber* successful;
+/* Page number of the page that was OCR-ed, starting with 1 for the first page in the PDF file [optional]
+ */
+@property(nonatomic) NSNumber* pageNumber;
 /* Word elements in the image [optional]
  */
-@property(nonatomic) NSArray<CMOcrWordElement>* words;
+@property(nonatomic) NSArray<CMOcrLineElement>* lines;
 
 @end

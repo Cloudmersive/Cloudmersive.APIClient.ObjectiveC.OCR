@@ -20,13 +20,16 @@
 
 
 
-@protocol CMImageToWordsWithLocationResult
+@protocol CMOcrPageResultWithWordsWithLocation
 @end
 
-@interface CMImageToWordsWithLocationResult : CMObject
+@interface CMOcrPageResultWithWordsWithLocation : CMObject
 
 
 @property(nonatomic) NSNumber* successful;
+/* Page number of the page that was OCR-ed, starting with 1 for the first page in the PDF file [optional]
+ */
+@property(nonatomic) NSNumber* pageNumber;
 /* Word elements in the image [optional]
  */
 @property(nonatomic) NSArray<CMOcrWordElement>* words;

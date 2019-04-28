@@ -14,21 +14,20 @@
 */
 
 
-#import "CMOcrWordElement.h"
-@protocol CMOcrWordElement;
-@class CMOcrWordElement;
+#import "CMOcrPageResultWithWordsWithLocation.h"
+@protocol CMOcrPageResultWithWordsWithLocation;
+@class CMOcrPageResultWithWordsWithLocation;
 
 
 
-@protocol CMImageToWordsWithLocationResult
+@protocol CMPdfToWordsWithLocationResult
 @end
 
-@interface CMImageToWordsWithLocationResult : CMObject
+@interface CMPdfToWordsWithLocationResult : CMObject
 
 
 @property(nonatomic) NSNumber* successful;
-/* Word elements in the image [optional]
- */
-@property(nonatomic) NSArray<CMOcrWordElement>* words;
+
+@property(nonatomic) NSArray<CMOcrPageResultWithWordsWithLocation>* ocrPages;
 
 @end
