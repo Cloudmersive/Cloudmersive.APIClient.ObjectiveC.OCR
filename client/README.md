@@ -110,7 +110,7 @@ Class | Method | HTTP request | Description
 *CMImageOcrApi* | [**imageOcrPost**](docs/CMImageOcrApi.md#imageocrpost) | **POST** /ocr/image/toText | Convert a scanned image into text
 *CMPdfOcrApi* | [**pdfOcrPdfToLinesWithLocation**](docs/CMPdfOcrApi.md#pdfocrpdftolineswithlocation) | **POST** /ocr/pdf/to/lines-with-location | Convert a PDF into text lines with location
 *CMPdfOcrApi* | [**pdfOcrPdfToWordsWithLocation**](docs/CMPdfOcrApi.md#pdfocrpdftowordswithlocation) | **POST** /ocr/pdf/to/words-with-location | Convert a PDF into words with location
-*CMPdfOcrApi* | [**pdfOcrPost**](docs/CMPdfOcrApi.md#pdfocrpost) | **POST** /ocr/pdf/toText | Converts an uploaded image in common formats such as JPEG, PNG into text via Optical Character Recognition.
+*CMPdfOcrApi* | [**pdfOcrPost**](docs/CMPdfOcrApi.md#pdfocrpost) | **POST** /ocr/pdf/toText | Converts an uploaded PDF file in common formats such as JPEG, PNG into text via Optical Character Recognition.
 *CMPreprocessingApi* | [**preprocessingUnrotate**](docs/CMPreprocessingApi.md#preprocessingunrotate) | **POST** /ocr/preprocessing/image/unrotate | Detect and unrotate a document image
 *CMPreprocessingApi* | [**preprocessingUnskew**](docs/CMPreprocessingApi.md#preprocessingunskew) | **POST** /ocr/preprocessing/image/unskew | Detect and unskew a photo of a document
 
