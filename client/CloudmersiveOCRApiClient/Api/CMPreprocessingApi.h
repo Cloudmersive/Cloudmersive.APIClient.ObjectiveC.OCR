@@ -1,4 +1,5 @@
 #import <Foundation/Foundation.h>
+#import "CMGetPageAngleResult.h"
 #import "CMApi.h"
 
 /**
@@ -22,6 +23,42 @@ extern NSInteger kCMPreprocessingApiMissingParamErrorCode;
 
 -(instancetype) initWithApiClient:(CMApiClient *)apiClient NS_DESIGNATED_INITIALIZER;
 
+/// Convert an image of text into a binarized (light and dark) view
+/// Perform an adaptive binarization algorithm on the input image to prepare it for further OCR operations.
+///
+/// @param imageFile Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.
+/// 
+///  code:200 message:"OK"
+///
+/// @return NSData*
+-(NSURLSessionTask*) preprocessingBinarizeWithImageFile: (NSURL*) imageFile
+    completionHandler: (void (^)(NSData* output, NSError* error)) handler;
+
+
+/// Convert an image of text into a binary (light and dark) view with ML
+/// Perform an advanced adaptive, Deep Learning-based binarization algorithm on the input image to prepare it for further OCR operations.  Provides enhanced accuracy than adaptive binarization.  Image will be upsampled to 300 DPI if it has a DPI below 300.
+///
+/// @param imageFile Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.
+/// 
+///  code:200 message:"OK"
+///
+/// @return NSData*
+-(NSURLSessionTask*) preprocessingBinarizeAdvancedWithImageFile: (NSURL*) imageFile
+    completionHandler: (void (^)(NSData* output, NSError* error)) handler;
+
+
+/// Get the angle of the page / document / receipt
+/// Analyzes a photo or image of a document and identifies the rotation angle of the page.
+///
+/// @param imageFile Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.
+/// 
+///  code:200 message:"OK"
+///
+/// @return CMGetPageAngleResult*
+-(NSURLSessionTask*) preprocessingGetPageAngleWithImageFile: (NSURL*) imageFile
+    completionHandler: (void (^)(CMGetPageAngleResult* output, NSError* error)) handler;
+
+
 /// Detect and unrotate a document image
 /// Detect and unrotate an image of a document (e.g. that was scanned at an angle).  Great for document scanning applications; once unskewed, this image is perfect for converting to PDF using the Convert API or optical character recognition using the OCR API.
 ///
@@ -29,9 +66,9 @@ extern NSInteger kCMPreprocessingApiMissingParamErrorCode;
 /// 
 ///  code:200 message:"OK"
 ///
-/// @return NSObject*
+/// @return NSData*
 -(NSURLSessionTask*) preprocessingUnrotateWithImageFile: (NSURL*) imageFile
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
+    completionHandler: (void (^)(NSData* output, NSError* error)) handler;
 
 
 /// Detect and unskew a photo of a document
@@ -41,9 +78,9 @@ extern NSInteger kCMPreprocessingApiMissingParamErrorCode;
 /// 
 ///  code:200 message:"OK"
 ///
-/// @return NSObject*
+/// @return NSData*
 -(NSURLSessionTask*) preprocessingUnskewWithImageFile: (NSURL*) imageFile
-    completionHandler: (void (^)(NSObject* output, NSError* error)) handler;
+    completionHandler: (void (^)(NSData* output, NSError* error)) handler;
 
 
 

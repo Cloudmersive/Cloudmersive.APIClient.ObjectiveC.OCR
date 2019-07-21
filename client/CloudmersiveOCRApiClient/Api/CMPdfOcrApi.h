@@ -57,7 +57,7 @@ extern NSInteger kCMPdfOcrApiMissingParamErrorCode;
     completionHandler: (void (^)(CMPdfToWordsWithLocationResult* output, NSError* error)) handler;
 
 
-/// Converts an uploaded PDF file in common formats such as JPEG, PNG into text via Optical Character Recognition.
+/// Converts an uploaded PDF file into text via Optical Character Recognition.
 /// 
 ///
 /// @param imageFile PDF file to perform OCR on.

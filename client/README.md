@@ -41,6 +41,7 @@ Import the following:
 #import <CloudmersiveOCRApiClient/CMApiClient.h>
 #import <CloudmersiveOCRApiClient/CMDefaultConfiguration.h>
 // load models
+#import <CloudmersiveOCRApiClient/CMGetPageAngleResult.h>
 #import <CloudmersiveOCRApiClient/CMImageToLinesWithLocationResult.h>
 #import <CloudmersiveOCRApiClient/CMImageToTextResponse.h>
 #import <CloudmersiveOCRApiClient/CMImageToWordsWithLocationResult.h>
@@ -48,14 +49,18 @@ Import the following:
 #import <CloudmersiveOCRApiClient/CMOcrPageResult.h>
 #import <CloudmersiveOCRApiClient/CMOcrPageResultWithLinesWithLocation.h>
 #import <CloudmersiveOCRApiClient/CMOcrPageResultWithWordsWithLocation.h>
+#import <CloudmersiveOCRApiClient/CMOcrPhotoTextElement.h>
 #import <CloudmersiveOCRApiClient/CMOcrWordElement.h>
 #import <CloudmersiveOCRApiClient/CMPdfToLinesWithLocationResult.h>
 #import <CloudmersiveOCRApiClient/CMPdfToTextResponse.h>
 #import <CloudmersiveOCRApiClient/CMPdfToWordsWithLocationResult.h>
+#import <CloudmersiveOCRApiClient/CMPhotoToWordsWithLocationResult.h>
+#import <CloudmersiveOCRApiClient/CMReceiptRecognitionResult.h>
 // load API classes for accessing endpoints
 #import <CloudmersiveOCRApiClient/CMImageOcrApi.h>
 #import <CloudmersiveOCRApiClient/CMPdfOcrApi.h>
 #import <CloudmersiveOCRApiClient/CMPreprocessingApi.h>
+#import <CloudmersiveOCRApiClient/CMReceiptsApi.h>
 
 ```
 
@@ -106,17 +111,24 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *CMImageOcrApi* | [**imageOcrImageLinesWithLocation**](docs/CMImageOcrApi.md#imageocrimagelineswithlocation) | **POST** /ocr/image/to/lines-with-location | Convert a scanned image into words with location
 *CMImageOcrApi* | [**imageOcrImageWordsWithLocation**](docs/CMImageOcrApi.md#imageocrimagewordswithlocation) | **POST** /ocr/image/to/words-with-location | Convert a scanned image into words with location
+*CMImageOcrApi* | [**imageOcrPhotoRecognizeReceipt**](docs/CMImageOcrApi.md#imageocrphotorecognizereceipt) | **POST** /ocr/photo/recognize/receipt | Recognize a photo of a receipt, extract key business information
 *CMImageOcrApi* | [**imageOcrPhotoToText**](docs/CMImageOcrApi.md#imageocrphotototext) | **POST** /ocr/photo/toText | Convert a photo of a document into text
+*CMImageOcrApi* | [**imageOcrPhotoWordsWithLocation**](docs/CMImageOcrApi.md#imageocrphotowordswithlocation) | **POST** /ocr/photo/to/words-with-location | Convert a photo of a document or receipt into words with location
 *CMImageOcrApi* | [**imageOcrPost**](docs/CMImageOcrApi.md#imageocrpost) | **POST** /ocr/image/toText | Convert a scanned image into text
 *CMPdfOcrApi* | [**pdfOcrPdfToLinesWithLocation**](docs/CMPdfOcrApi.md#pdfocrpdftolineswithlocation) | **POST** /ocr/pdf/to/lines-with-location | Convert a PDF into text lines with location
 *CMPdfOcrApi* | [**pdfOcrPdfToWordsWithLocation**](docs/CMPdfOcrApi.md#pdfocrpdftowordswithlocation) | **POST** /ocr/pdf/to/words-with-location | Convert a PDF into words with location
-*CMPdfOcrApi* | [**pdfOcrPost**](docs/CMPdfOcrApi.md#pdfocrpost) | **POST** /ocr/pdf/toText | Converts an uploaded PDF file in common formats such as JPEG, PNG into text via Optical Character Recognition.
+*CMPdfOcrApi* | [**pdfOcrPost**](docs/CMPdfOcrApi.md#pdfocrpost) | **POST** /ocr/pdf/toText | Converts an uploaded PDF file into text via Optical Character Recognition.
+*CMPreprocessingApi* | [**preprocessingBinarize**](docs/CMPreprocessingApi.md#preprocessingbinarize) | **POST** /ocr/preprocessing/image/binarize | Convert an image of text into a binarized (light and dark) view
+*CMPreprocessingApi* | [**preprocessingBinarizeAdvanced**](docs/CMPreprocessingApi.md#preprocessingbinarizeadvanced) | **POST** /ocr/preprocessing/image/binarize/advanced | Convert an image of text into a binary (light and dark) view with ML
+*CMPreprocessingApi* | [**preprocessingGetPageAngle**](docs/CMPreprocessingApi.md#preprocessinggetpageangle) | **POST** /ocr/preprocessing/image/get-page-angle | Get the angle of the page / document / receipt
 *CMPreprocessingApi* | [**preprocessingUnrotate**](docs/CMPreprocessingApi.md#preprocessingunrotate) | **POST** /ocr/preprocessing/image/unrotate | Detect and unrotate a document image
 *CMPreprocessingApi* | [**preprocessingUnskew**](docs/CMPreprocessingApi.md#preprocessingunskew) | **POST** /ocr/preprocessing/image/unskew | Detect and unskew a photo of a document
+*CMReceiptsApi* | [**receiptsPhotoToCSV**](docs/CMReceiptsApi.md#receiptsphototocsv) | **POST** /ocr/receipts/photo/to/csv | Convert a photo of a receipt into a CSV file containing structured information from the receipt
 
 
 ## Documentation For Models
 
+ - [CMGetPageAngleResult](docs/CMGetPageAngleResult.md)
  - [CMImageToLinesWithLocationResult](docs/CMImageToLinesWithLocationResult.md)
  - [CMImageToTextResponse](docs/CMImageToTextResponse.md)
  - [CMImageToWordsWithLocationResult](docs/CMImageToWordsWithLocationResult.md)
@@ -124,10 +136,13 @@ Class | Method | HTTP request | Description
  - [CMOcrPageResult](docs/CMOcrPageResult.md)
  - [CMOcrPageResultWithLinesWithLocation](docs/CMOcrPageResultWithLinesWithLocation.md)
  - [CMOcrPageResultWithWordsWithLocation](docs/CMOcrPageResultWithWordsWithLocation.md)
+ - [CMOcrPhotoTextElement](docs/CMOcrPhotoTextElement.md)
  - [CMOcrWordElement](docs/CMOcrWordElement.md)
  - [CMPdfToLinesWithLocationResult](docs/CMPdfToLinesWithLocationResult.md)
  - [CMPdfToTextResponse](docs/CMPdfToTextResponse.md)
  - [CMPdfToWordsWithLocationResult](docs/CMPdfToWordsWithLocationResult.md)
+ - [CMPhotoToWordsWithLocationResult](docs/CMPhotoToWordsWithLocationResult.md)
+ - [CMReceiptRecognitionResult](docs/CMReceiptRecognitionResult.md)
 
 
 ## Documentation For Authorization

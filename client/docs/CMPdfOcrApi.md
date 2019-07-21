@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**pdfOcrPdfToLinesWithLocation**](CMPdfOcrApi.md#pdfocrpdftolineswithlocation) | **POST** /ocr/pdf/to/lines-with-location | Convert a PDF into text lines with location
 [**pdfOcrPdfToWordsWithLocation**](CMPdfOcrApi.md#pdfocrpdftowordswithlocation) | **POST** /ocr/pdf/to/words-with-location | Convert a PDF into words with location
-[**pdfOcrPost**](CMPdfOcrApi.md#pdfocrpost) | **POST** /ocr/pdf/toText | Converts an uploaded PDF file in common formats such as JPEG, PNG into text via Optical Character Recognition.
+[**pdfOcrPost**](CMPdfOcrApi.md#pdfocrpost) | **POST** /ocr/pdf/toText | Converts an uploaded PDF file into text via Optical Character Recognition.
 
 
 # **pdfOcrPdfToLinesWithLocation**
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
         completionHandler: (void (^)(CMPdfToTextResponse* output, NSError* error)) handler;
 ```
 
-Converts an uploaded PDF file in common formats such as JPEG, PNG into text via Optical Character Recognition.
+Converts an uploaded PDF file into text via Optical Character Recognition.
 
 ### Example 
 ```objc
@@ -165,7 +165,7 @@ NSString* preprocessing = @"preprocessing_example"; // Optional, preprocessing m
 
 CMPdfOcrApi*apiInstance = [[CMPdfOcrApi alloc] init];
 
-// Converts an uploaded PDF file in common formats such as JPEG, PNG into text via Optical Character Recognition.
+// Converts an uploaded PDF file into text via Optical Character Recognition.
 [apiInstance pdfOcrPostWithImageFile:imageFile
               language:language
               preprocessing:preprocessing
