@@ -1,4 +1,5 @@
 #import <Foundation/Foundation.h>
+#import "CMBusinessCardRecognitionResult.h"
 #import "CMImageToLinesWithLocationResult.h"
 #import "CMImageToTextResponse.h"
 #import "CMImageToWordsWithLocationResult.h"
@@ -57,6 +58,18 @@ extern NSInteger kCMImageOcrApiMissingParamErrorCode;
     language: (NSString*) language
     preprocessing: (NSString*) preprocessing
     completionHandler: (void (^)(CMImageToWordsWithLocationResult* output, NSError* error)) handler;
+
+
+/// Recognize a photo of a business card, extract key business information
+/// Analyzes a photograph of a business card as input, and outputs key business information such as the name of the person, name of the business, the address of the business, the phone number, the email address and more.
+///
+/// @param imageFile Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.
+/// 
+///  code:200 message:"OK"
+///
+/// @return CMBusinessCardRecognitionResult*
+-(NSURLSessionTask*) imageOcrPhotoRecognizeBusinessCardWithImageFile: (NSURL*) imageFile
+    completionHandler: (void (^)(CMBusinessCardRecognitionResult* output, NSError* error)) handler;
 
 
 /// Recognize a photo of a receipt, extract key business information

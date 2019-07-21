@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**imageOcrImageLinesWithLocation**](CMImageOcrApi.md#imageocrimagelineswithlocation) | **POST** /ocr/image/to/lines-with-location | Convert a scanned image into words with location
 [**imageOcrImageWordsWithLocation**](CMImageOcrApi.md#imageocrimagewordswithlocation) | **POST** /ocr/image/to/words-with-location | Convert a scanned image into words with location
+[**imageOcrPhotoRecognizeBusinessCard**](CMImageOcrApi.md#imageocrphotorecognizebusinesscard) | **POST** /ocr/photo/recognize/business-card | Recognize a photo of a business card, extract key business information
 [**imageOcrPhotoRecognizeReceipt**](CMImageOcrApi.md#imageocrphotorecognizereceipt) | **POST** /ocr/photo/recognize/receipt | Recognize a photo of a receipt, extract key business information
 [**imageOcrPhotoToText**](CMImageOcrApi.md#imageocrphotototext) | **POST** /ocr/photo/toText | Convert a photo of a document into text
 [**imageOcrPhotoWordsWithLocation**](CMImageOcrApi.md#imageocrphotowordswithlocation) | **POST** /ocr/photo/to/words-with-location | Convert a photo of a document or receipt into words with location
@@ -130,6 +131,63 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CMImageToWordsWithLocationResult***](CMImageToWordsWithLocationResult.md)
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **imageOcrPhotoRecognizeBusinessCard**
+```objc
+-(NSURLSessionTask*) imageOcrPhotoRecognizeBusinessCardWithImageFile: (NSURL*) imageFile
+        completionHandler: (void (^)(CMBusinessCardRecognitionResult* output, NSError* error)) handler;
+```
+
+Recognize a photo of a business card, extract key business information
+
+Analyzes a photograph of a business card as input, and outputs key business information such as the name of the person, name of the business, the address of the business, the phone number, the email address and more.
+
+### Example 
+```objc
+CMDefaultConfiguration *apiConfig = [CMDefaultConfiguration sharedConfig];
+
+// Configure API key authorization: (authentication scheme: Apikey)
+[apiConfig setApiKey:@"YOUR_API_KEY" forApiKeyIdentifier:@"Apikey"];
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//[apiConfig setApiKeyPrefix:@"Bearer" forApiKeyIdentifier:@"Apikey"];
+
+
+NSURL* imageFile = [NSURL fileURLWithPath:@"/path/to/file.txt"]; // Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.
+
+CMImageOcrApi*apiInstance = [[CMImageOcrApi alloc] init];
+
+// Recognize a photo of a business card, extract key business information
+[apiInstance imageOcrPhotoRecognizeBusinessCardWithImageFile:imageFile
+          completionHandler: ^(CMBusinessCardRecognitionResult* output, NSError* error) {
+                        if (output) {
+                            NSLog(@"%@", output);
+                        }
+                        if (error) {
+                            NSLog(@"Error calling CMImageOcrApi->imageOcrPhotoRecognizeBusinessCard: %@", error);
+                        }
+                    }];
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **imageFile** | **NSURL***| Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported. | 
+
+### Return type
+
+[**CMBusinessCardRecognitionResult***](CMBusinessCardRecognitionResult.md)
 
 ### Authorization
 

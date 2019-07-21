@@ -41,6 +41,7 @@ Import the following:
 #import <CloudmersiveOCRApiClient/CMApiClient.h>
 #import <CloudmersiveOCRApiClient/CMDefaultConfiguration.h>
 // load models
+#import <CloudmersiveOCRApiClient/CMBusinessCardRecognitionResult.h>
 #import <CloudmersiveOCRApiClient/CMGetPageAngleResult.h>
 #import <CloudmersiveOCRApiClient/CMImageToLinesWithLocationResult.h>
 #import <CloudmersiveOCRApiClient/CMImageToTextResponse.h>
@@ -111,6 +112,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *CMImageOcrApi* | [**imageOcrImageLinesWithLocation**](docs/CMImageOcrApi.md#imageocrimagelineswithlocation) | **POST** /ocr/image/to/lines-with-location | Convert a scanned image into words with location
 *CMImageOcrApi* | [**imageOcrImageWordsWithLocation**](docs/CMImageOcrApi.md#imageocrimagewordswithlocation) | **POST** /ocr/image/to/words-with-location | Convert a scanned image into words with location
+*CMImageOcrApi* | [**imageOcrPhotoRecognizeBusinessCard**](docs/CMImageOcrApi.md#imageocrphotorecognizebusinesscard) | **POST** /ocr/photo/recognize/business-card | Recognize a photo of a business card, extract key business information
 *CMImageOcrApi* | [**imageOcrPhotoRecognizeReceipt**](docs/CMImageOcrApi.md#imageocrphotorecognizereceipt) | **POST** /ocr/photo/recognize/receipt | Recognize a photo of a receipt, extract key business information
 *CMImageOcrApi* | [**imageOcrPhotoToText**](docs/CMImageOcrApi.md#imageocrphotototext) | **POST** /ocr/photo/toText | Convert a photo of a document into text
 *CMImageOcrApi* | [**imageOcrPhotoWordsWithLocation**](docs/CMImageOcrApi.md#imageocrphotowordswithlocation) | **POST** /ocr/photo/to/words-with-location | Convert a photo of a document or receipt into words with location
@@ -128,6 +130,7 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [CMBusinessCardRecognitionResult](docs/CMBusinessCardRecognitionResult.md)
  - [CMGetPageAngleResult](docs/CMGetPageAngleResult.md)
  - [CMImageToLinesWithLocationResult](docs/CMImageToLinesWithLocationResult.md)
  - [CMImageToTextResponse](docs/CMImageToTextResponse.md)
