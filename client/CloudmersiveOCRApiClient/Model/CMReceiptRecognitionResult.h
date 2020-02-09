@@ -14,6 +14,9 @@
 */
 
 
+#import "CMReceiptLineItem.h"
+@protocol CMReceiptLineItem;
+@class CMReceiptLineItem;
 
 
 
@@ -22,17 +25,32 @@
 
 @interface CMReceiptRecognitionResult : CMObject
 
-
+/* True if the operation was successful, false otherwise [optional]
+ */
 @property(nonatomic) NSNumber* successful;
-
+/* The date and time printed on the receipt (if included on the receipt) [optional]
+ */
 @property(nonatomic) NSDate* timestamp;
-
+/* The name of the business printed on the receipt (if included on the receipt) [optional]
+ */
 @property(nonatomic) NSString* businessName;
-
+/* The website URL of the business printed on the receipt (if included on the receipt) [optional]
+ */
+@property(nonatomic) NSString* businessWebsite;
+/* The address of the business printed on the receipt (if included on the receipt) [optional]
+ */
 @property(nonatomic) NSString* addressString;
-
+/* The phone number printed on the receipt (if included on the receipt) [optional]
+ */
 @property(nonatomic) NSString* phoneNumber;
-
+/* The individual line items comprising the order; does not include total (see ReceiptTotal) [optional]
+ */
+@property(nonatomic) NSArray<CMReceiptLineItem>* receiptItems;
+/* Optional; if available, the monetary value of the receipt subtotal - typically not including specialized line items such as Tax. If this value is not available, it will be 0. [optional]
+ */
+@property(nonatomic) NSNumber* receiptSubTotal;
+/* The total monetary value of the receipt (if included on the receipt) [optional]
+ */
 @property(nonatomic) NSNumber* receiptTotal;
 
 @end

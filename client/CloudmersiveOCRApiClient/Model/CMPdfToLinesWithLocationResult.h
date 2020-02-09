@@ -25,9 +25,11 @@
 
 @interface CMPdfToLinesWithLocationResult : CMObject
 
-
+/* True if successful, false otherwise [optional]
+ */
 @property(nonatomic) NSNumber* successful;
-
+/* OCR results for each page [optional]
+ */
 @property(nonatomic) NSArray<CMOcrPageResultWithLinesWithLocation>* ocrPages;
 
 @end

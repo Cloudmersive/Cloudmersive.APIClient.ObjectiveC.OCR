@@ -25,9 +25,11 @@
 
 @interface CMPdfToWordsWithLocationResult : CMObject
 
-
+/* True if successful, false otherwise [optional]
+ */
 @property(nonatomic) NSNumber* successful;
-
+/* OCR page results [optional]
+ */
 @property(nonatomic) NSArray<CMOcrPageResultWithWordsWithLocation>* ocrPages;
 
 @end

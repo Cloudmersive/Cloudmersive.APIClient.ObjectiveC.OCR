@@ -71,6 +71,18 @@ extern NSInteger kCMPreprocessingApiMissingParamErrorCode;
     completionHandler: (void (^)(NSData* output, NSError* error)) handler;
 
 
+/// Detect and unrotate a document image (advanced)
+/// Detect and unrotate an image of a document (e.g. that was scanned at an angle) using deep learning.  Great for document scanning applications; once unskewed, this image is perfect for converting to PDF using the Convert API or optical character recognition using the OCR API.
+///
+/// @param imageFile Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.
+/// 
+///  code:200 message:"OK"
+///
+/// @return NSData*
+-(NSURLSessionTask*) preprocessingUnrotateAdvancedWithImageFile: (NSURL*) imageFile
+    completionHandler: (void (^)(NSData* output, NSError* error)) handler;
+
+
 /// Detect and unskew a photo of a document
 /// Detect and unskew a photo of a document (e.g. taken on a cell phone) into a perfectly square image.  Great for document scanning applications; once unskewed, this image is perfect for converting to PDF using the Convert API or optical character recognition using the OCR API.
 ///

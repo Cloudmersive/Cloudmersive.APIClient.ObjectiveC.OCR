@@ -14,6 +14,9 @@
 */
 
 
+#import "CMPoint.h"
+@protocol CMPoint;
+@class CMPoint;
 
 
 
@@ -37,6 +40,9 @@
 /* Height of the word in pixels [optional]
  */
 @property(nonatomic) NSNumber* height;
+/* Points that form the bounding polygon around the text [optional]
+ */
+@property(nonatomic) NSArray<CMPoint>* boundingPoints;
 /* Confidence level of the machine learning result; possible values are 0.0 (lowest accuracy) - 1.0 (highest accuracy) [optional]
  */
 @property(nonatomic) NSNumber* confidenceLevel;

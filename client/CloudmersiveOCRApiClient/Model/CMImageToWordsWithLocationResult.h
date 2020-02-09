@@ -25,7 +25,8 @@
 
 @interface CMImageToWordsWithLocationResult : CMObject
 
-
+/* True if successful, false otherwise [optional]
+ */
 @property(nonatomic) NSNumber* successful;
 /* Word elements in the image [optional]
  */

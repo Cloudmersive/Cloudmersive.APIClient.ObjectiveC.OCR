@@ -42,6 +42,12 @@ Import the following:
 #import <CloudmersiveOCRApiClient/CMDefaultConfiguration.h>
 // load models
 #import <CloudmersiveOCRApiClient/CMBusinessCardRecognitionResult.h>
+#import <CloudmersiveOCRApiClient/CMFieldResult.h>
+#import <CloudmersiveOCRApiClient/CMFormDefinitionTemplate.h>
+#import <CloudmersiveOCRApiClient/CMFormFieldDefinition.h>
+#import <CloudmersiveOCRApiClient/CMFormRecognitionResult.h>
+#import <CloudmersiveOCRApiClient/CMFormTableColumnDefinition.h>
+#import <CloudmersiveOCRApiClient/CMFormTableDefinition.h>
 #import <CloudmersiveOCRApiClient/CMGetPageAngleResult.h>
 #import <CloudmersiveOCRApiClient/CMImageToLinesWithLocationResult.h>
 #import <CloudmersiveOCRApiClient/CMImageToTextResponse.h>
@@ -56,7 +62,12 @@ Import the following:
 #import <CloudmersiveOCRApiClient/CMPdfToTextResponse.h>
 #import <CloudmersiveOCRApiClient/CMPdfToWordsWithLocationResult.h>
 #import <CloudmersiveOCRApiClient/CMPhotoToWordsWithLocationResult.h>
+#import <CloudmersiveOCRApiClient/CMPoint.h>
+#import <CloudmersiveOCRApiClient/CMReceiptLineItem.h>
 #import <CloudmersiveOCRApiClient/CMReceiptRecognitionResult.h>
+#import <CloudmersiveOCRApiClient/CMTableCellResult.h>
+#import <CloudmersiveOCRApiClient/CMTableResult.h>
+#import <CloudmersiveOCRApiClient/CMTableRowResult.h>
 // load API classes for accessing endpoints
 #import <CloudmersiveOCRApiClient/CMImageOcrApi.h>
 #import <CloudmersiveOCRApiClient/CMPdfOcrApi.h>
@@ -113,6 +124,8 @@ Class | Method | HTTP request | Description
 *CMImageOcrApi* | [**imageOcrImageLinesWithLocation**](docs/CMImageOcrApi.md#imageocrimagelineswithlocation) | **POST** /ocr/image/to/lines-with-location | Convert a scanned image into words with location
 *CMImageOcrApi* | [**imageOcrImageWordsWithLocation**](docs/CMImageOcrApi.md#imageocrimagewordswithlocation) | **POST** /ocr/image/to/words-with-location | Convert a scanned image into words with location
 *CMImageOcrApi* | [**imageOcrPhotoRecognizeBusinessCard**](docs/CMImageOcrApi.md#imageocrphotorecognizebusinesscard) | **POST** /ocr/photo/recognize/business-card | Recognize a photo of a business card, extract key business information
+*CMImageOcrApi* | [**imageOcrPhotoRecognizeForm**](docs/CMImageOcrApi.md#imageocrphotorecognizeform) | **POST** /ocr/photo/recognize/form | Recognize a photo of a form, extract key fields and business information
+*CMImageOcrApi* | [**imageOcrPhotoRecognizeFormAdvanced**](docs/CMImageOcrApi.md#imageocrphotorecognizeformadvanced) | **POST** /ocr/photo/recognize/form/advanced | Recognize a photo of a form, extract key fields using stored templates
 *CMImageOcrApi* | [**imageOcrPhotoRecognizeReceipt**](docs/CMImageOcrApi.md#imageocrphotorecognizereceipt) | **POST** /ocr/photo/recognize/receipt | Recognize a photo of a receipt, extract key business information
 *CMImageOcrApi* | [**imageOcrPhotoToText**](docs/CMImageOcrApi.md#imageocrphotototext) | **POST** /ocr/photo/toText | Convert a photo of a document into text
 *CMImageOcrApi* | [**imageOcrPhotoWordsWithLocation**](docs/CMImageOcrApi.md#imageocrphotowordswithlocation) | **POST** /ocr/photo/to/words-with-location | Convert a photo of a document or receipt into words with location
@@ -124,6 +137,7 @@ Class | Method | HTTP request | Description
 *CMPreprocessingApi* | [**preprocessingBinarizeAdvanced**](docs/CMPreprocessingApi.md#preprocessingbinarizeadvanced) | **POST** /ocr/preprocessing/image/binarize/advanced | Convert an image of text into a binary (light and dark) view with ML
 *CMPreprocessingApi* | [**preprocessingGetPageAngle**](docs/CMPreprocessingApi.md#preprocessinggetpageangle) | **POST** /ocr/preprocessing/image/get-page-angle | Get the angle of the page / document / receipt
 *CMPreprocessingApi* | [**preprocessingUnrotate**](docs/CMPreprocessingApi.md#preprocessingunrotate) | **POST** /ocr/preprocessing/image/unrotate | Detect and unrotate a document image
+*CMPreprocessingApi* | [**preprocessingUnrotateAdvanced**](docs/CMPreprocessingApi.md#preprocessingunrotateadvanced) | **POST** /ocr/preprocessing/image/unrotate/advanced | Detect and unrotate a document image (advanced)
 *CMPreprocessingApi* | [**preprocessingUnskew**](docs/CMPreprocessingApi.md#preprocessingunskew) | **POST** /ocr/preprocessing/image/unskew | Detect and unskew a photo of a document
 *CMReceiptsApi* | [**receiptsPhotoToCSV**](docs/CMReceiptsApi.md#receiptsphototocsv) | **POST** /ocr/receipts/photo/to/csv | Convert a photo of a receipt into a CSV file containing structured information from the receipt
 
@@ -131,6 +145,12 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [CMBusinessCardRecognitionResult](docs/CMBusinessCardRecognitionResult.md)
+ - [CMFieldResult](docs/CMFieldResult.md)
+ - [CMFormDefinitionTemplate](docs/CMFormDefinitionTemplate.md)
+ - [CMFormFieldDefinition](docs/CMFormFieldDefinition.md)
+ - [CMFormRecognitionResult](docs/CMFormRecognitionResult.md)
+ - [CMFormTableColumnDefinition](docs/CMFormTableColumnDefinition.md)
+ - [CMFormTableDefinition](docs/CMFormTableDefinition.md)
  - [CMGetPageAngleResult](docs/CMGetPageAngleResult.md)
  - [CMImageToLinesWithLocationResult](docs/CMImageToLinesWithLocationResult.md)
  - [CMImageToTextResponse](docs/CMImageToTextResponse.md)
@@ -145,7 +165,12 @@ Class | Method | HTTP request | Description
  - [CMPdfToTextResponse](docs/CMPdfToTextResponse.md)
  - [CMPdfToWordsWithLocationResult](docs/CMPdfToWordsWithLocationResult.md)
  - [CMPhotoToWordsWithLocationResult](docs/CMPhotoToWordsWithLocationResult.md)
+ - [CMPoint](docs/CMPoint.md)
+ - [CMReceiptLineItem](docs/CMReceiptLineItem.md)
  - [CMReceiptRecognitionResult](docs/CMReceiptRecognitionResult.md)
+ - [CMTableCellResult](docs/CMTableCellResult.md)
+ - [CMTableResult](docs/CMTableResult.md)
+ - [CMTableRowResult](docs/CMTableRowResult.md)
 
 
 ## Documentation For Authorization

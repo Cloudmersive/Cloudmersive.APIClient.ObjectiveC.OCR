@@ -22,21 +22,29 @@
 
 @interface CMBusinessCardRecognitionResult : CMObject
 
-
+/* True if the operation was successful, false otherwise [optional]
+ */
 @property(nonatomic) NSNumber* successful;
-
+/* The name of the person printed on the business card (if included on the business card) [optional]
+ */
 @property(nonatomic) NSString* personName;
-
+/* The title of the person printed on the business card (if included on the business card) [optional]
+ */
 @property(nonatomic) NSString* personTitle;
-
+/* The name of the business printed on the business card (if included on the business card) [optional]
+ */
 @property(nonatomic) NSString* businessName;
-
+/* The address printed on the business card (if included on the business card) [optional]
+ */
 @property(nonatomic) NSString* addressString;
-
+/* The phone number printed on the business card (if included on the business card) [optional]
+ */
 @property(nonatomic) NSString* phoneNumber;
-
+/* The email address printed on the business card (if included on the business card) [optional]
+ */
 @property(nonatomic) NSString* emailAddress;
-
+/* The date and time printed on the business card (if included on the business card) [optional]
+ */
 @property(nonatomic) NSDate* timestamp;
 
 @end

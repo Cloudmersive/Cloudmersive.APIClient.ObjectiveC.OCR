@@ -25,9 +25,11 @@
 
 @interface CMPdfToTextResponse : CMObject
 
-
+/* True if successful, false otherwise [optional]
+ */
 @property(nonatomic) NSNumber* successful;
-
+/* Page OCR results [optional]
+ */
 @property(nonatomic) NSArray<CMOcrPageResult>* ocrPages;
 
 @end
