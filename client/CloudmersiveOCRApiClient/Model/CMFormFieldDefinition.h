@@ -34,6 +34,9 @@
 /* Optional - the bottom anchor of the field [optional]
  */
 @property(nonatomic) NSString* bottomAnchor;
+/* Optional - alterate match text for the specified anchor [optional]
+ */
+@property(nonatomic) NSString* alternateAnchor;
 /* Optional - the matching mode for the anchor.  Possible values are Complete (requires the entire anchor to match) and Partial (allows only part of the anchor to match) and Horizontal (anchor must be laid out horizontally).  Default is Partial. [optional]
  */
 @property(nonatomic) NSString* anchorMode;

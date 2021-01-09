@@ -17,7 +17,7 @@
  * This method is used by `JSONModel`.
  */
 + (JSONKeyMapper *)keyMapper {
-  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"fieldID": @"FieldID", @"leftAnchor": @"LeftAnchor", @"topAnchor": @"TopAnchor", @"bottomAnchor": @"BottomAnchor", @"anchorMode": @"AnchorMode", @"dataType": @"DataType", @"targetDigitCount": @"TargetDigitCount", @"minimumCharacterCount": @"MinimumCharacterCount", @"allowNumericDigits": @"AllowNumericDigits", @"verticalAlignmentType": @"VerticalAlignmentType", @"horizontalAlignmentType": @"HorizontalAlignmentType", @"targetFieldWidthRelative": @"TargetFieldWidth_Relative", @"targetFieldHeightRelative": @"TargetFieldHeight_Relative", @"targetFieldHorizontalAdjustment": @"TargetFieldHorizontalAdjustment", @"targetFieldVerticalAdjustment": @"TargetFieldVerticalAdjustment", @"ignore": @"Ignore", @"options": @"Options" }];
+  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"fieldID": @"FieldID", @"leftAnchor": @"LeftAnchor", @"topAnchor": @"TopAnchor", @"bottomAnchor": @"BottomAnchor", @"alternateAnchor": @"AlternateAnchor", @"anchorMode": @"AnchorMode", @"dataType": @"DataType", @"targetDigitCount": @"TargetDigitCount", @"minimumCharacterCount": @"MinimumCharacterCount", @"allowNumericDigits": @"AllowNumericDigits", @"verticalAlignmentType": @"VerticalAlignmentType", @"horizontalAlignmentType": @"HorizontalAlignmentType", @"targetFieldWidthRelative": @"TargetFieldWidth_Relative", @"targetFieldHeightRelative": @"TargetFieldHeight_Relative", @"targetFieldHorizontalAdjustment": @"TargetFieldHorizontalAdjustment", @"targetFieldVerticalAdjustment": @"TargetFieldVerticalAdjustment", @"ignore": @"Ignore", @"options": @"Options" }];
 }
 
 /**
@@ -27,7 +27,7 @@
  */
 + (BOOL)propertyIsOptional:(NSString *)propertyName {
 
-  NSArray *optionalProperties = @[@"fieldID", @"leftAnchor", @"topAnchor", @"bottomAnchor", @"anchorMode", @"dataType", @"targetDigitCount", @"minimumCharacterCount", @"allowNumericDigits", @"verticalAlignmentType", @"horizontalAlignmentType", @"targetFieldWidthRelative", @"targetFieldHeightRelative", @"targetFieldHorizontalAdjustment", @"targetFieldVerticalAdjustment", @"ignore", @"options"];
+  NSArray *optionalProperties = @[@"fieldID", @"leftAnchor", @"topAnchor", @"bottomAnchor", @"alternateAnchor", @"anchorMode", @"dataType", @"targetDigitCount", @"minimumCharacterCount", @"allowNumericDigits", @"verticalAlignmentType", @"horizontalAlignmentType", @"targetFieldWidthRelative", @"targetFieldHeightRelative", @"targetFieldHorizontalAdjustment", @"targetFieldVerticalAdjustment", @"ignore", @"options"];
   return [optionalProperties containsObject:propertyName];
 }
 

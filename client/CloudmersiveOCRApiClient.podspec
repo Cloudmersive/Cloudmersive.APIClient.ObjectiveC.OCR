@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
     s.name             = "CloudmersiveOCRApiClient"
-    s.version          = "1.1.8"
+    s.version          = "1.1.9"
 
     s.summary          = "ocrapi"
     s.description      = <<-DESC
